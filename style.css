@@ -16,8 +16,12 @@ header{
 
     width: 100%;
     height: 100px;
-    background: linear-gradient(to right, #0b132b, #0f1c3f);
+    background: linear-gradient(to right, #0b132b,#080e20, #060a16);
     padding: 12px 40px;
+
+    position: sticky; /* faz o header ficar "grudado" no topo*/
+    top: 0; /*definir que ele fique colado no topo*/
+    z-index: 1000;/*Garantir que ele fique por cima das outras coisas*/
 }
 
 .Logo{
@@ -50,6 +54,7 @@ nav{
 .links a{
     text-decoration: none;     /* Tira sublinhado */
     color: white;
+    font-size: 16px;
     padding: 20px;
 
 }
@@ -61,5 +66,300 @@ nav{
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
     margin-right: 60px;
+}
+
+.hero-section {
+  /* Define a altura para ocupar pelo menos 80% da altura da tela */
+  min-height: 80vh; 
+  
+  /*Degradê + Imagem na mesma propriedade */
+  background-image: 
+    linear-gradient(
+      to right, /* Direção do degradê: da esquerda para a direita */
+      rgba(11, 19, 43, 0.95) 5%,   /* Midnight Blue quase sólido na esquerda */
+      rgba(11, 19, 43, 0.7) 55%,   /* Começa a ficar transparente no meio */
+      rgba(11, 19, 43, 0.2) 100%   /* Bem transparente na direita */
+    ),
+    url('images/Gemini_Generated_Image_5i2kkw5i2kkw5i2k.png');
+
+  /* Configurações de ajuste da imagem */
+  background-size: cover; /* Faz a imagem cobrir todo o espaço sem distorcer */
+  background-position: center right; /* Foca mais no lado direito da imagem */
+  background-repeat: no-repeat;
+
+  /* Flexbox para alinhar o conteúdo */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  padding: 0 10%; /* Espaçamento lateral para não grudar na borda */
+}
+
+/* Estilização do texto para garantir o contraste */
+.hero-content {
+  max-width: 600px; /* Limita a largura do texto para ele não ir até o fim da tela */
+}
+
+.hero-content h1 {
+  color: #F8F9FA; /* Branco Gelo */
+  font-size: 3rem;
+  font-family: sans-serif; 
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  color: #D1D5DB; /* Um cinza claro para diferenciar do título */
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.cta-button{
+    background: #ff680b;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 60px;
+}
+
+/* Configurações da Seção */
+.services-section {
+  background-color: #F8F9FA; /* Branco Gelo para dar respiro após a Hero Section */
+  padding: 80px 10%; /* Espaçamento vertical e lateral */
+}
+
+.section-title {
+  text-align: center;
+  color: #0B132B; /* Midnight Blue */
+  font-size: 2.5rem;
+  font-family: sans-serif;
+  margin-bottom: 60px;
+}
+
+/* O Poder do CSS Grid */
+.services-grid {
+  display: grid;
+  /* O pulo do gato: Isso faz os cards ficarem lado a lado no PC e empilhados no celular automaticamente! */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px; /* Espaço entre os cards */
+}
+
+/* Estilo Premium para os Cards */
+.service-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  /* Sombra super suave e elegante para dar profundidade */
+  box-shadow: 0 10px 30px rgba(11, 19, 43, 0.05);
+  
+  /* Prepara o card para a animação de hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Efeito Hover: O card "levanta" levemente */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(11, 19, 43, 0.12);
+}
+
+/* Espaço temporário para as imagens dos cards */
+.card-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background-color: #E5E7EB; /* Cinza claro temporário */
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.service-card h3 {
+  color: #C5832B; /* Cobre/Bronze para destaque */
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: #2E3136; /* Cinza chumbo para leitura confortável */
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: sans-serif;
+}
+
+/* Fundo escuro novamente para criar contraste com a seção anterior (Branco Gelo) */
+.tech-section {
+  background-color: #0B132B; /* Midnight Blue */
+  padding: 100px 10%;
+  color: #F8F9FA;
+}
+
+/* Título alinhado à esquerda para essa seção específica */
+.section-title.left-align {
+  text-align: left;
+  color: #F8F9FA;
+  margin-bottom: 30px;
+}
+
+/* O Poder do Flexbox para o Layout de Duas Colunas */
+.tech-container {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente as duas colunas */
+  justify-content: space-between;
+  gap: 90px;
+}
+
+/* Cada coluna ocupa cerca de 50% do espaço */
+.tech-content {
+  flex: 1;
+}
+
+.tech-content p {
+  color: #D1D5DB;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.tech-stack {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap; /* Permite que as tags quebrem para a linha de baixo */
+  gap: 15px;
+  justify-content: flex-end; /* Alinha as tags para a direita */
+}
+
+/* Estilo das Tags de Tecnologia */
+.tech-tag {
+  background-color: rgba(197, 131, 43, 0.1); /* Fundo Cobre bem transparente */
+  color: #C5832B; /* Texto Cobre */
+  border: 1px solid #C5832B;
+  padding: 10px 20px;
+  border-radius: 30px; /* Bordas arredondadas (pílula) */
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* Efeito Hover nas Tags */
+.tech-tag:hover {
+  background-color: #C5832B;
+  color: #0B132B; /* Inverte as cores no hover */
+  transform: scale(1.05); /* Dá um leve zoom */
+}
+
+/* Configuração Geral do Footer */
+.site-footer {
+  background-color: #070C1C; /* Um tom ainda mais escuro que o #0B132B para dar profundidade */
+  color: #F8F9FA;
+  padding: 80px 10% 20px; /* Muito espaço em cima, pouco embaixo */
+  font-family: sans-serif;
+}
+
+/* Flexbox para as três colunas */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* Permite quebrar linha no celular */
+  margin-bottom: 60px;
+}
+
+/* Largura das colunas */
+.footer-brand { flex: 2; min-width: 250px; }
+.footer-links { flex: 1; min-width: 150px; }
+.footer-contact { flex: 1; min-width: 250px; }
+
+/* Estilos de Texto e Logo no Footer */
+.footer-logo {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.footer-logo span {
+  color: #C5832B; /* Ponto final em cobre para estilo */
+}
+
+.footer-brand p, .footer-contact p {
+  color: #A0AABF; /* Cinza azulado para não competir com os títulos */
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.footer-links h3, .footer-contact h3 {
+  color: #F8F9FA;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Lista de Links sem os marcadores padrão (bolinhas) */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #A0AABF;
+  text-decoration: none; /* Tira o sublinhado padrão dos links */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #C5832B; /* Link fica cobre ao passar o mouse */
+}
+
+/* Botão menor no rodapé */
+.footer-cta {
+  background-color: transparent;
+  color: #C5832B;
+  border: 1px solid #C5832B;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.footer-cta:hover {
+  background-color: #C5832B;
+  color: #070C1C;
+}
+
+/* Linha separadora e Copyright */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil */
+  padding-top: 20px;
+  text-align: center;
+  color: #6B7280;
+  font-size: 0.85rem;
+}
+
+/* Responsividade: Telas menores que 768px (Tablets e Celulares) */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Empilha as colunas */
+  }
+}
+
+/* Responsividade Básica: Se a tela for menor que 900px, as colunas empilham */
+@media (max-width: 900px) {
+  .tech-container {
+    flex-direction: column;
+  }
+  .tech-stack {
+    justify-content: flex-start;
+  }
 }
